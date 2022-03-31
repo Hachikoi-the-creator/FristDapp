@@ -28,6 +28,7 @@
         <button onclick="GetAllNames()">Get All Names</button>
         <button onclick="EraseLastName()">Remove Last Name</button>
       </div>
+      <h5 class="show-names"></h5>
     </main>
   </body>
   <script
@@ -100,14 +101,16 @@
     //easier if it has the same name as the contract, no need tho
     async function SetName() {
       const yerName = document.getElementById("yer-name").value;
-      const setNamePromise = NameContract.SetName();
+      const setNamePromise = NameContract.SetName(yerName);
       await setNamePromise;
     }
 
     async function GetAllNames() {
+      const showNames = document.querySelector(".show-names");
+      showNames.textContent = "";
       const getNamePromise = NameContract.GetAllNames();
       const Names = await getNamePromise;
-      console.log(Names);
+      Names.forEach((element) => (showNames.textContent += ` ${element}`));
     }
 
     async function EraseLastName() {
