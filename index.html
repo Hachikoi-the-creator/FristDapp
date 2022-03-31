@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <meta
+      name="description"
+      content="A pretty real amazing, incredible the most oustanding Dapp in the whole market!"
+    />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+
+    <title>POG Dapp</title>
+
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>My first Dapp 🥳</h1>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi unde
+        saepe dicta culpa nostrum, sapiente dolores veniam, nam veritatis et,
+        non magnam vero repellendus iste omnis corporis?
+      </p>
+      <label for="yer-name"></label>
+      <input type="text" id="yer-name" placeholder="Please enter yer name" />
+      <div class="btns">
+        <button onclick="SetName()">Add Name</button>
+        <button onclick="GetAllNames()">Get All Names</button>
+        <button onclick="EraseLastName()">Remove Last Name</button>
+      </div>
+    </main>
+  </body>
+  <script
+    src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+    type="application/javascript"
+  ></script>
+  <script>
+    const provider = new ethers.providers.Web3Provider(
+      window.ethereum,
+      "ropsten"
+    );
+
+    const NameContractAdress = "0x98e12935dcb06d4113df69ebd7318775622cfb07";
+    const NameContractABI = [
+      {
+        inputs: [],
+        name: "EraseLastName",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function",
+      },
+      {
+        inputs: [],
+        name: "GetAllNames",
+        outputs: [
+          {
+            internalType: "string[]",
+            name: "",
+            type: "string[]",
+          },
+        ],
+        stateMutability: "view",
+        type: "function",
+      },
+      {
+        inputs: [
+          {
+            internalType: "string",
+            name: "_theName",
+            type: "string",
+          },
+        ],
+        name: "SetName",
+        outputs: [
+          {
+            internalType: "string",
+            name: "",
+            type: "string",
+          },
+        ],
+        stateMutability: "nonpayable",
+        type: "function",
+      },
+    ];
+    let NameContract;
+    let signer;
+
+    /*A contract is created in the browser, whit the address and ABI of your contract, and the account of the user who is using it!*/
+    provider.send("eth_requestAccounts", []).then(() => {
+      provider.listAccounts().then(function (accounts) {
+        signer = provider.getSigner(accounts[0]);
+        NameContract = new ethers.Contract(
+          NameContractAdress,
+          NameContractABI,
+          signer
+        );
+      });
+    });
+
+    //easier if it has the same name as the contract, no need tho
+    async function SetName() {
+      const yerName = document.getElementById("yer-name").value;
+      const setNamePromise = NameContract.SetName();
+      await setNamePromise;
+    }
+
+    async function GetAllNames() {
+      const getNamePromise = NameContract.GetAllNames();
+      const Names = await getNamePromise;
+      console.log(Names);
+    }
+
+    async function EraseLastName() {
+      const removeNamePromise = NameContract.EraseLastName();
+      await removeNamePromise;
+    }
+  </script>
+</html>
