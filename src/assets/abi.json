@@ -1,0 +1,47 @@
+[
+  {
+    "inputs": [],
+    "name": "getMood",
+    "outputs": [
+      {
+        "internalType": "enum MoodyContraction.MoodType",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "enum MoodyContraction.MoodType",
+        "name": "_mood",
+        "type": "uint8"
+      }
+    ],
+    "name": "setMood",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "userToMood",
+    "outputs": [
+      {
+        "internalType": "enum MoodyContraction.MoodType",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
