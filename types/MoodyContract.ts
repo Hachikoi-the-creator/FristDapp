@@ -7,3 +7,16 @@ export type MoodyContract = Contract & {
 };
 
 export type Signer = providers.JsonRpcSigner;
+
+export type Mood =
+  | "Moody"
+  | "Happy"
+  | "Depressed"
+  | "Exited"
+  | "Stressed"
+  | "Gratefull"
+  | "Joyfull"
+  | "Inspired"
+  | "Furious"
+  | "Focused"
+  | "Productive";
