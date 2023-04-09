@@ -8,7 +8,8 @@ import ConnectBtn from "./components/ConnectBtn";
 // *  - component - *
 export default function App() {
   const [signer, setSigner] = useState<Signer>();
-  const [showModal, setShowModal] = useState(!signer);
+  // const [showModal, setShowModal] = useState(!signer);
+  const [showModal, setShowModal] = useState(false);
 
   const updateSigner = (signer: Signer) => {
     setSigner(signer);
@@ -20,11 +21,10 @@ export default function App() {
 
   return (
     <main className="main">
-      <h1>Select your mood!</h1>
+      <div className="main-bg"></div>
+      <h1 className="title">Share your mood~</h1>
       {showModal && <ConnectBtn {...{ updateSigner, closeModal }} />}
-      <div className="desc">
-        <SetMoodBtn {...{ signer }} />
-      </div>
+      <SetMoodBtn {...{ signer }} />
     </main>
   );
 }

@@ -26,17 +26,14 @@ export default function SetMoodBtn({ signer }: { signer: Signer | undefined }) {
     }
   };
 
-  if (!signer)
-    return (
-      <section>
-        <h1>No signer detected :c</h1>
-      </section>
-    );
-
   return (
     <section className="mood-btns">
       {contractData.moods.map((mood, idx) => (
-        <button onClick={() => setMood(idx)} key={mood} className="btn">
+        <button
+          onClick={() => setMood(idx)}
+          key={mood}
+          className={`btn ${mood.toLowerCase()}`}
+        >
           {mood}
         </button>
       ))}

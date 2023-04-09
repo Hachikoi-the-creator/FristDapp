@@ -1,10 +1,123 @@
 .mood-btns {
   width: 80%;
-  margin: 0 auto;
+  margin: 3rem auto;
   display: flex;
 
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
+
+  .btn {
+    width: 15ch;
+    text-shadow: 1px 1px 3px #fff;
+
+    &:hover {
+      color: #fff;
+      text-shadow: 1px 1px 3px #000;
+    }
+  }
+
+  /* Moody */
+  .moody {
+    background-image: linear-gradient(to right, #4e4d4c, #9a8478);
+
+    &:hover {
+      background-image: linear-gradient(to right, #1c1c1b, #58504c);
+    }
+  }
+
+  /* Happy */
+  .happy {
+    background-image: linear-gradient(to right, #f6d365, #fda085);
+
+    &:hover {
+      background-image: linear-gradient(to right, #d4a200, #ff6347);
+    }
+  }
+
+  /* Depressed */
+  .depressed {
+    background-image: linear-gradient(to right, #bdc3c7, #647381);
+
+    &:hover {
+      background-image: linear-gradient(to right, #8c949a, #3e4c5d);
+    }
+  }
+
+  /* Excited */
+  .exited {
+    background-image: linear-gradient(to right, #ec008c, #fc6767);
+
+    &:hover {
+      background-image: linear-gradient(to right, #990041, #ff1f1f);
+    }
+  }
+
+  /* Happy */
+  .happy {
+    background-image: linear-gradient(to right, #f6d365, #fda085);
+
+    &:hover {
+      background-image: linear-gradient(to right, #d4a200, #ff6347);
+    }
+  }
+
+  /* Stressed */
+  .stressed {
+    background-image: linear-gradient(to right, #ff9933, #ff0066);
+
+    &:hover {
+      background-image: linear-gradient(to right, #cc8000, #ff355e);
+    }
+  }
+
+  /* Grateful */
+  .gratefull {
+    background-image: linear-gradient(to right, #00b09b, #96c93d);
+
+    &:hover {
+      background-image: linear-gradient(to right, #008473, #7bb92e);
+    }
+  }
+
+  /* Joyful */
+  .joyfull {
+    background-image: linear-gradient(to right, #76e6ff, #0083b0);
+    &:hover {
+      background-image: linear-gradient(to right, #2b8ba3, #0b3e51);
+    }
+  }
+
+  /* Inspired */
+  .inspired {
+    background-image: linear-gradient(to right, #ff80d9, #b91d73);
+    &:hover {
+      background-image: linear-gradient(to right, #c72779, #7c1d56);
+    }
+  }
+
+  /* Furious */
+  .furious {
+    background-image: linear-gradient(to right, #ff84a1, #ff4b2b);
+    &:hover {
+      background-image: linear-gradient(to right, #e03d3d, #ad1f1f);
+    }
+  }
+
+  /* Focused */
+  .focused {
+    background-image: linear-gradient(to right, #6b94f1, #22478f);
+    &:hover {
+      background-image: linear-gradient(to right, #22478f, #132348);
+    }
+  }
+
+  /* Productive */
+  .productive {
+    background-image: linear-gradient(to right, #2ae0c5, #239693);
+    &:hover {
+      background-image: linear-gradient(to right, #0d8e7e, #0b5351);
+    }
+  }
 }

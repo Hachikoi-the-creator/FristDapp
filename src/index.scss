@@ -17,22 +17,31 @@
 
 .main {
   height: 100%;
+
+  // * fixed bg cannot be on main tag :O
+  .main-bg {
+    background-image: url("./assets/bg.png");
+    // makes it looks cooler on scroll
+    // background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: #24242493;
+    background-blend-mode: multiply;
+    position: fixed;
+
+    width: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  background: url("./assets/bg.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-color: #24242493;
-  background-blend-mode: multiply;
 }
 
 img {
@@ -55,10 +64,15 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.title {
+  padding-top: 3rem;
 }
