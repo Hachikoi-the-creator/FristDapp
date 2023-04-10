@@ -4,6 +4,7 @@ import { Signer } from "../types/MoodyContract";
 // * comps
 import SetMoodBtn from "./components/SetMoodBtn";
 import ConnectBtn from "./components/ConnectBtn";
+import SearchMood from "./components/SelfMood";
 
 // *  - component - *
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
       <h1 className="title">Share your mood~</h1>
       {showModal && <ConnectBtn {...{ updateSigner, closeModal }} />}
       <SetMoodBtn {...{ signer }} />
+      <SearchMood who="mine" moodIdx={2} />
     </main>
   );
 }
