@@ -15,12 +15,12 @@ OUTPUT = {description} \n ![IMG](https://image.pollinations.ai/prompt/{descripti
 INPUT = photo of a cat
 OUTPUT = a photo of a cat traveling trhough space, cute, mate colors, ALBRECHT DÜRER
 
-# Midjourney promtp
-
-Beautiful landing for spiderman website design, ux/ui, ux, ui, --ar 3:2 --v 4 --q 2
-
 # TODO:
 
 - add an spinner that appears while the transaction is being minned
-- add the mood searcher comp to look for the mood of anyone
 - add a modal to show when user tries to do something without being connected
+- implement https://docs.metamask.io/guide/ethereum-provider.html#chainchanged
+
+# re-deploy todo
+
+- add the mood searcher comp to look for the mood of anyone
